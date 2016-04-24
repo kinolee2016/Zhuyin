@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta content="width=device-width, initial-scale=1, maximum-scale=2.0, user-scalable=yes, minimal-ui=yes" name="viewport" />
+<title>The Tiwanneze Sounds of Music</title>
+<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Quicksand|Karla" rel="stylesheet" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+</script>
+-->
+<script>
+function perform_press(id) {
+  var obj = document.getElementById(id);
+  if(obj.onclick != make_active) {
+    return;
+  }
+  obj.className = "sound active";
+  obj.onclick = function(e) {};
+  var audio = new Audio("" + id + ".mp3");
+  audio.play();
+}
+function make_active(e) {
+  console.log("make active", e);
+  var sounds_bttn = document.getElementsByClassName("sound");
+  for(var i = sounds_bttn.length; i > 0; i--) {
+    sounds_bttn.className = "sound";
+  }
+  perform_press(e.target.id);
+}
+function setup(){
+  var sounds_bttn = document.getElementsByClassName("sound");
+  for(var i = sounds_bttn.length; i > 0; i--) {
+    sounds_bttn[i-1].onclick = make_active;
+    var audio = new Audio("" + sounds_bttn[i-1].id + ".mp3")
+  }
+  document.onkeypress = function(e) {
+    console.log(e);
+    switch (e.charCode) {
+      case 51: // 3
+        perform_press("bo");
+        break;
+      case 52: // 4
+        perform_press("de");
+        break;
+      case 53: // 5
+        perform_press("ghi");
+        break;
+      case 54: // 6
+        perform_press("a");
+        break;
+      case 55: // 7
+        perform_press("i");
+        break;
+      case 56: // 8
+        perform_press("an");
+        break;
+      case 57: // 9
+        perform_press("rr");
+        break;
+      case 113: // q
+        perform_press("po");
+        break;
+      case 119: // w
+        perform_press("te");
+        break;
+      case 101: // e
+        perform_press("go");
+        break;
+      case 114: // r
+        perform_press("ji");
+        break;
+      case 116: // t
+        perform_press("tsh");
+        break;
+      case 121: // y
+        perform_press("ds");
+        break;
+      case 117: // u
+        perform_press("ii");
+        break;
+      case 105: // i
+        perform_press("oo");
+        break;
+      case 111: // o
+        perform_press("ei");
+        break;
+      case 112: // p
+        perform_press("ng");
+        break;
+      case 97: // a
+        perform_press("mo");
+        break;
+      case 115: // s
+        perform_press("no");
+        break;
+      case 100: // d
+        perform_press("ko");
+        break;
+      case 102: // f
+        perform_press("chi");
+        break;
+      case 103: // g
+        perform_press("shi");
+        break;
+      case 104: // h
+        perform_press("tsi");
+        break;
+      case 106: // j
+        perform_press("wu");
+        break;
+      case 107: // k
+        perform_press("eh");
+        break;
+      case 108: // l
+        perform_press("au");
+        break;
+      case 59: // ;
+        perform_press("ang");
+        break;
+      case 122: // z
+        perform_press("fo");
+        break;
+      case 120: // x
+        perform_press("lo");
+        break;
+      case 99: // c
+        perform_press("ho");
+        break;
+      case 118: // v
+        perform_press("si");
+        break;
+      case 98: // b
+        perform_press("rhe")
+        break;
+      case 110: // n
+        perform_press("sss");
+        break;
+      case 109: // m
+        perform_press("yu");
+        break;
+      case 44: // ,
+        perform_press("ee");
+        break;
+      case 46: // .
+        perform_press("ou");
+        break;
+      case 48: // 0
+        perform_press("ong");
+        break;
+      default:
+      break;
+    }
+  }
+}
+
+
+</script>
+
+<style>
+body {
+  background-color: #000;
+  color:#fee;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently */
+  text-align: center;
+  padding: 1em 15%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+}
+.sound {
+  display: inline-block;
+  width: 2em;
+  margin: 0.5em;
+  text-align: center;
+  padding: 1em;
+  background-color: #333;
+  border: 1px #aaa solid;
+  border-bottom: 1px #555 solid;
+  border-right: 1px #555 solid;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -moz-box-shadow:    1px 1px 3px 2px #333;
+  -webkit-box-shadow: 1px 1px 3px 2px #333;
+  box-shadow:         1px 1px 3px 2px #333;
+  }
+.active {
+  background-color: #533;
+  border-bottom: 1px #eee solid;
+  border-right: 1px #eee solid;
+  -moz-box-shadow:    1px 1px 3px 2px #533;
+  -webkit-box-shadow: 1px 1px 3px 2px #533;
+  box-shadow:         1px 1px 3px 2px #533;
+}
+h1 {
+  text-align: center;
+}
+p {
+  font-size: 1.2em;
+}
+</style>
+
+</head>
+<body onload="setup()">
+<h1>Song of ZhuYin</h1>
+<p>
+<i>Click on the Zhuyin symbol or use the keyboard</i>
+</p>
+<hr />
+<a id='bo' class='sound'>
+  ㄅ
+</a>
+<a id='de' class='sound'>
+  ㄉ
+</a>
+<a id='ghi' class='sound'>
+  ㄓ
+</a>
+<a id='a' class='sound'>
+  ㄚ
+</a>
+<a id='i' class='sound'>
+  ㄞ
+</a>
+<a id='an' class='sound'>
+  ㄢ
+</a>
+<a id='rr' class='sound'>
+  ㄦ
+</a>
+<a id='ong' class='sound'>
+  ㄥ
+</a>
+<br/>
+<a id='po' class='sound'>
+  ㄆ
+</a>
+<a id='te' class='sound'>
+  ㄊ
+</a>
+<a id='go' class='sound'>
+  ㄍ
+</a>
+<a id='ji' class='sound'>
+  ㄐ
+</a>
+<a id='tsh' class='sound'>
+  ㄔ
+</a>
+<a id='ds' class='sound'>
+  ㄗ
+</a>
+<a id='ii' class='sound'>
+  ㄧ
+</a>
+<a id='oo' class='sound'>
+  ㄛ
+</a>
+<a id='ei' class='sound'>
+  ㄟ
+</a>
+<a id='ng' class='sound'>
+  ㄣ
+</a>
+<br/>
+<a id='mo' class='sound'>
+  ㄇ
+</a>
+<a id='no' class='sound'>
+  ㄋ
+</a>
+<a id='ko' class='sound'>
+  ㄎ
+</a>
+<a id='chi' class='sound'>
+  ㄑ
+</a>
+<a id='shi' class='sound'>
+  ㄕ
+</a>
+<a id='tsi' class='sound'>
+  ㄘ
+</a>
+<a id='wu' class='sound'>
+  ㄨ
+</a>
+<a id='eh' class='sound'>
+  ㄜ
+</a>
+<a id='au' class='sound'>
+  ㄠ
+</a>
+<a id='ang' class='sound'>
+  ㄤ
+</a>
+<br/>
+<a id='fo' class='sound'>
+  ㄈ
+</a>
+<a id='lo' class='sound'>
+  ㄌ
+</a>
+<a id='ho' class='sound'>
+  ㄏ
+</a>
+<a id='si' class='sound'>
+  ㄒ
+</a>
+<a id='rhe' class='sound'>
+  ㄖ
+</a>
+<a id='sss' class='sound'>
+  ㄙ
+</a>
+<a id='yu' class='sound'>
+  ㄩ
+</a>
+<a id='ee' class='sound'>
+  ㄝ
+</a>
+<a id='ou' class='sound'>
+  ㄡ
+</a>
+
+</body>
+</html>
